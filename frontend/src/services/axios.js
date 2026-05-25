@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: '/api' });
+const API = axios.create({
+  baseURL: 'https://ai-resume-analyzer-backend-ohld.onrender.com/'
+});
 
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem('token');

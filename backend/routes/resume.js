@@ -31,9 +31,9 @@ Return exactly this JSON structure:
     const response = await axios.post(
       'https://api.groq.com/openai/v1/chat/completions',
       {
-        model: 'llama-3.3-70b-versatile',
+                model: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: 1000,
+        max_tokens: 3000,
       },
       {
         headers: {
